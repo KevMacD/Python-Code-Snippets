@@ -91,13 +91,11 @@ def get_noaa_space_weather(timeout_s: float = 10.0) -> Dict[str, Any]:
     conditions = _compute_conditions(solar_flux, k_index)
 
     return {
-        "solarFlux": solar_flux,              # e.g., 178
-        "kIndex": k_index,                    # e.g., 4.0
-        "sunspotNumber": sunspot_number,      # e.g., 210
+        "solar_flux": solar_flux,              # e.g., 178
+        "k_index": k_index,                    # e.g., 4.0
+        "SSN": sunspot_number,      # e.g., 210
         "conditions": conditions,             # EXCELLENT/GOOD/FAIR/POOR/UNKNOWN
         "lastUpdate": datetime.now(timezone.utc),
-        # Optional placeholders mirroring your JS shape:
-        "aIndex": None,
     }
 #if __name__ == "__main__":
     #data = get_noaa_space_weather(timeout_s=8)
