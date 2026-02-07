@@ -1,0 +1,125 @@
+# OpenHamClock Configuration
+# 
+# This file is automatically copied to .env on first run.
+# Edit .env with your station info - it won't be overwritten by updates.
+#
+# After editing, restart the server: npm start
+
+# ===========================================
+# REQUIRED - Your Station Information
+# ===========================================
+
+# Your amateur radio callsign
+CALLSIGN=VE7KVO
+
+# Your Maidenhead grid locator (4 or 6 character)
+LOCATOR=CN89ua
+
+# Your station coordinates (optional - calculated from LOCATOR if not set)
+LATITUDE=49.2474
+LONGITUDE=-123.02
+
+# ===========================================
+# SERVER SETTINGS
+# ===========================================
+
+# Port to run the server on (default: 3000)
+PORT=3000
+
+# Host/IP to bind to
+# localhost = only accessible from this computer
+# 0.0.0.0 = accessible from other devices on your network
+HOST=localhost
+
+# ===========================================
+# DISPLAY PREFERENCES  
+# ===========================================
+
+# Units: 'imperial' or 'metric'
+# Affects temperature (°F/°C) and distances (mi/km)
+UNITS=metric
+
+
+# Time format: '12' or '24' hour
+TIME_FORMAT=24
+
+# Theme: 'dark', 'light', 'legacy', or 'retro'
+THEME=dark
+
+# Layout: 'modern' or 'classic'
+LAYOUT=modern
+
+# Timezone: IANA timezone identifier
+# Set this if your local time shows incorrectly (e.g. same as UTC).
+# This is common with privacy browsers like Librewolf that spoof timezone.
+# Examples: America/New_York, America/Regina, Europe/London, Asia/Tokyo
+# Leave blank or commented out to use browser default.
+# TZ=America/New_York
+
+# ===========================================
+# OPTIONAL - External Services
+# ===========================================
+
+# ITURHFProp service URL (for advanced propagation predictions)
+# Only uncomment if you have your own ITURHFProp service running
+# ITURHFPROP_URL=https://your-iturhfprop-service.com
+
+# DX Spider Proxy URL (for DX cluster spots)
+# Only uncomment if you have your own proxy running
+# Only uncomment if you have your own ITURHFProp service running
+# ITURHFPROP_URL=https://your-iturhfprop-service.com
+
+# DX Spider Proxy URL (for DX cluster spots)
+# Only uncomment if you have your own proxy running
+# DXSPIDER_PROXY_URL=https://your-dxspider-proxy.com
+
+# DX Cluster source: auto | proxy | hamqth | dxspider
+# auto = tries proxy first, then HamQTH, then direct telnet
+# proxy = use DX Spider Proxy (set DXSPIDER_PROXY_URL above)
+# hamqth = HamQTH CSV feed (HTTP, works everywhere)
+# dxspider = direct telnet to DX Spider nodes (works locally/Pi)
+DX_CLUSTER_SOURCE=auto
+
+# OpenWeatherMap API key (for local weather display)
+# Get a free key at https://openweathermap.org/api
+OPENWEATHER_API_KEY=93285766b86a198bb63024af34e89fe6
+# ===========================================
+# FEATURE TOGGLES
+# ===========================================
+
+# Show POTA spots on map (true/false)
+SHOW_POTA=true
+
+# Show satellite tracks on map (true/false)
+SHOW_SATELLITES=true
+
+# Show DX paths on map (true/false)
+SHOW_DX_PATHS=true
+
+# ===========================================
+# WSJT-X / JTDX UDP INTEGRATION
+# ===========================================
+
+# Enable WSJT-X UDP listener (true/false)
+# Listens for decoded FT8/FT4/JT65/WSPR messages from WSJT-X, JTDX, etc.
+WSJTX_ENABLED=false
+
+# UDP port to listen on (must match WSJT-X Settings > Reporting > UDP Server port)
+WSJTX_UDP_PORT=2237
+
+# Relay key for remote WSJT-X relay agent (cloud deployments)
+# If you're running OpenHamClock on a cloud server (e.g. Railway, openhamclock.com),
+# WSJT-X UDP can't reach it directly. Set this key and run the relay agent
+# (wsjtx-relay/relay.js) on your local machine to bridge the gap.
+# Pick any strong random string — it must match on both sides.
+# WSJTX_RELAY_KEY=your-secret-relay-key-here
+
+# ===========================================
+# DX CLUSTER SETTINGS
+# ===========================================
+
+# Your callsign for DX cluster login (default: CALLSIGN-56)
+# DX_CLUSTER_CALLSIGN=N0CALL-56
+
+# Spot retention time in minutes (5-30)
+SPOT_RETENTION_MINUTES=15
